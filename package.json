@@ -1,0 +1,19 @@
+{
+  "name": "fun-with-node-unittest",
+  "version": "0.0.1",
+  "description": "End of sunday fun with node.js unit testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcelo Paixão Resende",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^3.0.1",
+    "gulp-util": "^3.0.8",
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.7"
+  }
+}
