@@ -6,6 +6,7 @@ class Student {
         student.name = name;
         student.grade = grade;
         student.id = uuid.v4();
+        return student;
     }
 
     advanceGrade() {
