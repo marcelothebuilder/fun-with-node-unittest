@@ -34,6 +34,16 @@ class Course {
         if (!Array.isArray(times)) times = [times];
 
         days.forEach((day) => {
+            if (!this._isValidDay(day))
+                throw new Error(`Provided day ${day} is invalid`);
+        });
+
+        times.forEach((time) => {
+            if (!this._isValidTime(time))
+                throw new Error(`Provided time ${time} is invalid`);
+        });
+
+        days.forEach((day) => {
             times.forEach((time) => {
                 this.times.push({
                     day: day,
@@ -54,6 +64,35 @@ class Course {
     showStudents() {
         let studentsTexts = this.students.map((student) => student.toString());
         return studentsTexts.join('\n') + '\n';
+    }
+
+    _isValidDay(day) {
+        return ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].indexOf(String(day).trim().toLowerCase()) !== -1;
+    }
+
+    _isValidTime(time) {
+        if (time.length !== 5) return false;
+
+        let parts = time.split(':');
+
+        if (parts.length !== 2) return false;
+
+        let hours = parts[0];
+        let minutes = parts[1];
+
+        if (hours.length !== 2) return false;
+        if (minutes.length !== 2) return false;
+
+        hours = parseInt(hours);
+        minutes = parseInt(minutes);
+
+        let isHoursValid = hours >= 0 && hours <= 23;
+        if (!isHoursValid) return false;
+
+        let isMinutesValid = minutes >= 0 && minutes <= 59;
+        if (!isMinutesValid) return false;
+
+        return true;
     }
 }
 

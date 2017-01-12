@@ -3,7 +3,6 @@ const should = chai.should();
 const expect = chai.expect;
 
 const Student = require('../Student');
-const Course = require('../Course');
 
 describe("Student", () => {
     let name = 'Michael';
