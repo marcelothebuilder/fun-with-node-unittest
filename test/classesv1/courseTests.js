@@ -2,8 +2,8 @@ const chai = require('chai');
 const should = chai.should();
 const expect = chai.expect;
 
-const Course = require('../Course');
-const Student = require('../Student');
+const Course = require('../../classesv1/Course');
+const Student = require('../../classesv1/Student');
 
 describe("Course", () => {
     let name = "Unit testing node.js";

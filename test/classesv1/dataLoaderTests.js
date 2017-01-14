@@ -2,7 +2,7 @@ const chai = require('chai');
 const should = chai.should();
 const expect = chai.expect;
 
-const DataLoader = require('../DataLoader');
+const DataLoader = require('../../classesv1/DataLoader');
 
 describe('DataLoader', () => {
     let dataLoader;
